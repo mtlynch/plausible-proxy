@@ -17,9 +17,9 @@ jobs:
     docker:
       - image: google/cloud-sdk:333.0.0
     environment:
-      GCLOUD_PROJECT: tinypilotkvm
+      GCLOUD_PROJECT: dusty-vcr
       GO_RUNTIME: go113
-      FUNCTION_NAME: ProcessOrder
+      FUNCTION_NAME: github.com/mtlynch/rss-proxy/proxy.ProxyRequest
     steps:
       - checkout
       - attach_workspace:
@@ -40,7 +40,7 @@ jobs:
       - run:
           name: Configure runtime environment variables
           command: |
-            echo "SPREADSHEET_ID: '${SPREADSHEET_ID}'" >> .env.yaml
+            echo "TARGET_URL: '${TARGET_URL}'" >> .env.yaml
       - run:
           name: Deploy to AppEngine
           command: |

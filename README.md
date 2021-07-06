@@ -5,7 +5,6 @@
 ## Testing
 
 ```bash
-TESTER="$(mktemp -d)/cli"
-go build -o "${TESTER}" ./dev-scripts/cli.go
-"${TESTER}"
+TARGET_URL=https://anchor.fm/s/someID/podcast/rss PORT=8080 \
+  go run dev-scripts/cli.go
 ```

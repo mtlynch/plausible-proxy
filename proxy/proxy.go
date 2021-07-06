@@ -21,7 +21,7 @@ func ProxyRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	copyHeaders(resp.Header, w.Header(), []string{"content-type", "cache-control", "access-control-allow-origin", "etag"})
+	copyHeaders(resp.Header, w.Header(), []string{"content-type", "cache-control", "access-control-allow-origin", "etag", "content-length"})
 	w.WriteHeader(resp.StatusCode)
 
 	io.Copy(w, resp.Body)
