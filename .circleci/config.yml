@@ -19,7 +19,7 @@ jobs:
     environment:
       GCLOUD_PROJECT: dusty-vcr
       GO_RUNTIME: go113
-      FUNCTION_NAME: github.com/mtlynch/rss-proxy/proxy.ProxyRequest
+      FUNCTION_NAME: ProxyRequest
     steps:
       - checkout
       - attach_workspace:
@@ -48,6 +48,7 @@ jobs:
               "${FUNCTION_NAME}" \
               --runtime "${GO_RUNTIME}" \
               --env-vars-file .env.yaml \
+              --source proxy \
               --trigger-http \
               --allow-unauthenticated
 workflows:
