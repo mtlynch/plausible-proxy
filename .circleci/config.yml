@@ -15,7 +15,7 @@ jobs:
           command: dev-scripts/check-go-formatting
   deploy:
     docker:
-      - image: google/cloud-sdk:333.0.0
+      - image: google/cloud-sdk:351.0.0-slim
     environment:
       GCLOUD_PROJECT: dusty-vcr
       GO_RUNTIME: go113
