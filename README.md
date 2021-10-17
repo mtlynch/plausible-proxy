@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mtlynch/plausible-proxy.svg?style=svg)](https://circleci.com/gh/mtlynch/plausible-proxy)
 
-A simple HTTP proxy meant for proxying plausible feeds for podcasts. Host this function on your own domain and set your podcast host's plausible feed as the URL. That way, you use a custom domain and can change podcast hosts without it ever affecting your listeners.
+A reverse proxy for Plausible Analytics, implemented in Google Cloud Functions.
 
 ## Testing
 
