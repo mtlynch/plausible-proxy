@@ -7,7 +7,7 @@ A simple HTTP proxy meant for proxying plausible feeds for podcasts. Host this f
 ## Testing
 
 ```bash
-TARGET_URL=https://anchor.fm/s/someID/podcast/plausible PORT=8080 \
+PORT=8080 \
   go run dev-scripts/cli.go
 ```
 
@@ -20,7 +20,7 @@ To deploy to Google Cloud Platform, replace the ENV variables in the CircleCI co
 ### With gcloud CLI tool
 
 ```bash
-FUNCTION_NAME="ProxyRequest"
+FUNCTION_NAME="ProxyPlausible"
 GO_RUNTIME="go113"
 
 gcloud functions deploy \

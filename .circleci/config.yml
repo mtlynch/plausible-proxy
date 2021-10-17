@@ -40,7 +40,6 @@ jobs:
             gcloud functions deploy \
               "${FUNCTION_NAME}" \
               --runtime "${GO_RUNTIME}" \
-              --env-vars-file .env.yaml \
               --source proxy \
               --trigger-http \
               --allow-unauthenticated
