@@ -9,5 +9,4 @@ set -x
 # Exit on unset variable.
 set -u
 
-./dev-scripts/run-go-tests
 ./dev-scripts/check-go-formatting
