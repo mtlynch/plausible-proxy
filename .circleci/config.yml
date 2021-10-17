@@ -3,6 +3,7 @@ jobs:
   test:
     docker:
       - image: cimg/go:1.13
+    resource_class: small
     steps:
       - checkout
       - attach_workspace:
@@ -13,6 +14,7 @@ jobs:
   deploy:
     docker:
       - image: google/cloud-sdk:360.0.0-slim
+    resource_class: small
     environment:
       GCLOUD_PROJECT: mtlynch-blog
       GO_RUNTIME: go113
