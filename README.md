@@ -20,9 +20,17 @@ To deploy to Google Cloud Platform, replace the ENV variables in the CircleCI co
 ### With gcloud CLI tool
 
 ```bash
-FUNCTION_NAME="ProxyPlausible"
 GO_RUNTIME="go113"
 
+FUNCTION_NAME="ProxyPlausibleEvent"
+gcloud functions deploy \
+  "${FUNCTION_NAME}" \
+  --runtime "${GO_RUNTIME}" \
+  --source proxy \
+  --trigger-http \
+  --allow-unauthenticated
+
+FUNCTION_NAME="ProxyPlausibleScript"
 gcloud functions deploy \
   "${FUNCTION_NAME}" \
   --runtime "${GO_RUNTIME}" \
