@@ -61,6 +61,7 @@ If you're using Firebase, the cleaner way to access your function is to use a Fi
     "source": "/plaus-proxy/**",
     "function": "ProxyPlausible"
   }
+]
 ```
 
 Then your `<script>` include simplifies to the following:
