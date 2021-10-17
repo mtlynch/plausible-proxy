@@ -9,7 +9,7 @@ import (
 
 var target = mustParseURL("https://plausible.io/api/event")
 
-func ProxyRequest(w http.ResponseWriter, r *http.Request) {
+func ProxyPlausible(w http.ResponseWriter, r *http.Request) {
 	httputil.NewSingleHostReverseProxy(target).ServeHTTP(w, r)
 }
 
