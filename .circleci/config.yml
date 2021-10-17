@@ -40,7 +40,7 @@ jobs:
           name: Deploy Plausible Proxy to GCP
           command: |
             gcloud functions deploy \
-              "${ProxyPlausible}" \
+              "${FUNCTION_NAME}" \
               --runtime "${GO_RUNTIME}" \
               --memory 128MB \
               --source proxy \
