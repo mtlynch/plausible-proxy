@@ -18,6 +18,7 @@ jobs:
     environment:
       GCLOUD_PROJECT: mtlynch-blog
       GO_RUNTIME: go113
+      FUNCTION_NAME: ProxyPlausible
     steps:
       - checkout
       - attach_workspace:
@@ -36,20 +37,12 @@ jobs:
           name: Configure gcloud project
           command: gcloud config set project "${GCLOUD_PROJECT}"
       - run:
-          name: Deploy script proxy to GCP
+          name: Deploy Plausible Proxy to GCP
           command: |
             gcloud functions deploy \
-              ProxyPlausibleScript \
+              "${ProxyPlausible}" \
               --runtime "${GO_RUNTIME}" \
-              --source proxy \
-              --trigger-http \
-              --allow-unauthenticated
-      - run:
-          name: Deploy event proxy to GCP
-          command: |
-            gcloud functions deploy \
-              ProxyPlausibleEvent \
-              --runtime "${GO_RUNTIME}" \
+              --memory 128MB \
               --source proxy \
               --trigger-http \
               --allow-unauthenticated
