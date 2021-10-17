@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/mtlynch/rss-proxy/proxy"
+	"github.com/mtlynch/plausible-proxy/proxy"
 )
 
 func main() {
