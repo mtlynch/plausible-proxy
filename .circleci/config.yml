@@ -16,7 +16,7 @@ jobs:
     environment:
       GCLOUD_PROJECT: mtlynch-blog
       GO_RUNTIME: go113
-      FUNCTION_NAME: ProxyRequest
+      FUNCTION_NAME: ProxyPlausible
     steps:
       - checkout
       - attach_workspace:
@@ -34,10 +34,6 @@ jobs:
       - run:
           name: Configure gcloud project
           command: gcloud config set project "${GCLOUD_PROJECT}"
-      - run:
-          name: Configure runtime environment variables
-          command: |
-            echo "TARGET_URL: '${TARGET_URL}'" >> .env.yaml
       - run:
           name: Deploy to GCP
           command: |
